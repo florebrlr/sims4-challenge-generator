@@ -91,20 +91,23 @@ function packNameById(id) {
 
 <style scoped>
 .challenge-detail {
-  max-width: 700px;
+  max-width: 600px;
   margin: 2rem auto;
-  padding: 1rem 2rem;
-  font-family: Arial, sans-serif;
-  background: #f8f8f8;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+  padding: 1.5rem 2rem;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  color: #222;
+  font-family: 'Inter', sans-serif;
 }
 
-h2 {
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #3498db;
+.challenge-detail h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #005fcc;
+  border-bottom: 3px solid #005fcc;
   padding-bottom: 0.3rem;
-  color: #2c3e50;
 }
 
 .section {
@@ -112,29 +115,47 @@ h2 {
 }
 
 .section h3 {
-  margin-bottom: 0.3rem;
-  color: #34495e;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #004499;
+  margin-bottom: 0.4rem;
+  border-left: 4px solid #005fcc;
+  padding-left: 0.6rem;
 }
 
-ul {
+.section p, .section ul {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.section ul {
   list-style-type: disc;
   margin-left: 1.5rem;
 }
 
-p {
-  font-size: 1.1rem;
-  color: #555;
+.section ul li {
+  margin-bottom: 0.4rem;
 }
 
-router-link {
+.router-link-active, router-link {
   display: inline-block;
-  margin-top: 1rem;
-  color: #3498db;
+  margin-top: 1.5rem;
+  color: #005fcc;
+  font-weight: 600;
   text-decoration: none;
-  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-router-link:hover {
+.router-link-active:hover, router-link:hover {
+  color: #003d99;
   text-decoration: underline;
 }
+
+p {
+  font-size: 1rem;
+  color: #555;
+}
 </style>
+

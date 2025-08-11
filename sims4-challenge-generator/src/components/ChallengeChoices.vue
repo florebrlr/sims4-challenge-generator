@@ -306,7 +306,6 @@ function generateChallenge() {
   max-width: 700px;
   margin: 2rem auto;
   padding: 1rem 2rem;
-  font-family: Arial, sans-serif;
 }
 
 .packs-selection fieldset {
@@ -323,45 +322,7 @@ function generateChallenge() {
   align-items: center;
 }
 
-.select-all {
-  font-weight: normal;
-  font-size: 0.85rem;
-  user-select: none;
-  cursor: pointer;
-}
 
-.packs-selection label {
-  display: block;
-  margin: 0.3rem 0;
-  cursor: pointer;
-}
-
-.random-options {
-  margin-top: 2rem;
-}
-
-.option-checkbox {
-  margin: 0.3rem 0;
-}
-
-.option-label {
-  display: block;
-  cursor: pointer;
-}
-
-.restriction-section {
-  margin-top: 2rem;
-}
-
-.pack-count-selection {
-  margin-top: 2rem;
-  font-size: 1.1rem;
-}
-
-.pack-count-selection label {
-  margin-right: 1.5rem;
-  cursor: pointer;
-}
 
 .generate-btn {
   margin-top: 2rem;
