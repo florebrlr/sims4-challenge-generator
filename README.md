@@ -1,5 +1,24 @@
 # sims4-challenge-generator
 
+![Vue.js](https://img.shields.io/badge/Vue.js-3.x-42b883?logo=vue.js&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Status](https://img.shields.io/badge/Status-En%20développement-orange)
+![Node.js](https://img.shields.io/badge/Node.js-14%2B-green?logo=node.js&logoColor=white)
+![Contributions](https://img.shields.io/badge/Contributions-Bienvenues-brightgreen)  
+
+## 📑 Sommaire
+1. [🎮 Présentation](#-présentation)
+2. [⚙️ Fonctionnalités principales](#️-fonctionnalités-principales)
+3. [📂 Structure du projet](#-structure-du-projet)
+4. [🛠️ Installation et démarrage](#️-installation-et-démarrage)
+   - [Prérequis](#prérequis)
+   - [Installation](#installation)
+5. [🚀 Déploiement](#-déploiement)
+6. [🧪 Contribution](#-contribution)
+7. [📄 Licence](#-licence)
+8. [📞 Contact](#-contact)
+9. [🆕 Update](#update)
+10. [📝 To Do](#to-do)
 ## 🎮 Présentation
 
 Le projet **sims4-challenge-generator** est une application web permettant aux joueurs de *The Sims 4* de générer des défis aléatoires pour leurs parties. Cette version 2025 est développée avec Vue.js 3.
@@ -80,6 +99,6 @@ Pour toute question, contactez-moi via GitHub.
 - 1ers tests si code fonctionne  
 
 ## TO DO  
--Refaire CSS  
--Re-roll le challenge  
--Pouvoir enregistrer les challenges en format text  
+ Refaire CSS  
+- Re-roll le challenge  
+- Pouvoir enregistrer les challenges en format text  
