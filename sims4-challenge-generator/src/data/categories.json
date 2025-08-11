@@ -67,6 +67,10 @@
     "min": 1,
     "max": 4
   },
+    "Family": {
+    "min": 1,
+    "max": 8
+  },
   "timer": [5, 10, 15, 20, 30, 45, 60],
   "restriction": [
     "Pas de bb.moveobject",
