@@ -1,5 +1,5 @@
 {
-  "allStyles": [
+  "styles": [
     "victorien",
     "campagne",
     "gothique",
@@ -26,7 +26,7 @@
     "salle de sport",
     "petite entreprise"
   ],
-  "allColors": [
+  "colors": [
     "rouge",
     "orange",
     "rose",
@@ -40,7 +40,7 @@
     "marron clair",
     "marron foncé"
   ],
-  "allLots": [
+  "lots": [
     "20x15",
     "20x20",
     "30x20",
@@ -51,5 +51,26 @@
     "50x40",
     "50x50",
     "64x64"
+  ],
+  "budget": {
+    "minimum": 1000,
+    "low": 5000,
+    "medium": 20000,
+    "high": 100000,
+    "unlimited": 10000000
+  },
+  "roomCounts": {
+    "min": 2,
+    "max": 15
+  },
+  "Floors": {
+    "min": 1,
+    "max": 4
+  },
+  "timer": [5, 10, 15, 20, 30, 45, 60],
+  "restriction": [
+    "Pas de bb.moveobject",
+    "Pas de bb.showhiddenobjects ou bb.showliveobjects",
+    "Posé c'est posé!"
   ]
 }
