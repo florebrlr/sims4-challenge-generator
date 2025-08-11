@@ -1,0 +1,417 @@
+{
+  "BaseGame": [
+    {
+      "id": "jeu-de-base",
+      "name": "Jeu de base",
+      "type": "base_game"
+    }
+  ],
+  "expansionPacks": [
+    {
+      "id": "au-travail",
+      "name": "Au Travail",
+      "type": "extension"
+    },
+    {
+      "id": "vie-citadine",
+      "name": "vie Citadine",
+      "type": "extension"
+    },
+    {
+      "id": "vivre-ensemble",
+      "name": "Vivre Ensemble",
+      "type": "extension"
+    },
+    {
+      "id": "chiens-et-chats",
+      "name": "Chiens et Chats",
+      "type": "extension"
+    },
+    {
+      "id": "saisons",
+      "name": "Saisons",
+      "type": "extension"
+    },
+    {
+      "id": "heure-de-gloire",
+      "name": "Heure de gloire",
+      "type": "extension"
+    },
+    {
+      "id": "a-la-fac",
+      "name": "À la fac",
+      "type": "extension"
+    },
+    {
+      "id": "iles-paradisiaques",
+      "name": "Iles paradisiaques",
+      "type": "extension"
+    },
+    {
+      "id": "ecologie",
+      "name": "Écologie",
+      "type": "extension"
+    },
+    {
+      "id": "escapade-enneigee",
+      "name": "Escapade enneigée",
+      "type": "extension"
+    },
+    {
+      "id": "vie-a-la-campagne",
+      "name": "Vie à la campagne",
+      "type": "extension"
+    },
+    {
+      "id": "annees-lycee",
+      "name": "Années Lycée",
+      "type": "extension"
+    },
+    {
+      "id": "grandir-ensemble",
+      "name": "Grandir ensemble",
+      "type": "extension"
+    },
+    {
+      "id": "vie-au-ranch",
+      "name": "Vie au Ranch",
+      "type": "extension"
+    },
+    {
+      "id": "a-louer",
+      "name": "À Louer",
+      "type": "extension"
+    },
+    {
+      "id": "amour-fou",
+      "name": "Amour Fou",
+      "type": "extension"
+    },
+    {
+      "id": "a-la-vie-a-la-mort",
+      "name": "À la vie à la mort",
+      "type": "extension"
+    },
+    {
+      "id": "business-loisirs",
+      "name": "Business & loisirs",
+      "type": "extension"
+    },
+    {
+      "id": "nature-enchantee",
+      "name": "Nature enchantée",
+      "type": "extension"
+    }
+  ],
+  "gamePacks": [
+    {
+      "id": "destination-nature",
+      "name": "Destination Nature",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "detente-au-spa",
+      "name": "Détente au spa",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "au-restaurant",
+      "name": "Au Restaurant",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "vampires",
+      "name": "Vampires",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "etre-parents",
+      "name": "Être parents",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "dans-la-jungle",
+      "name": "Dans la jungle",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "strangerville",
+      "name": "StrangerVille",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "monde-magique",
+      "name": "Monde magique",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "voyage-sur-batuu",
+      "name": "Voyage sur Batuu",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "decoration-dinterieur",
+      "name": "Décoration d'Intérieur",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "mariage",
+      "name": "Mariage",
+      "type": "pack_de_jeu"
+    },
+    {
+      "id": "loups-garous",
+      "name": "Loups-Garous",
+      "type": "pack_de_jeu"
+    }
+  ],
+  "stuffPacks": [
+    {
+      "id": "soirees-de-luxe",
+      "name": "Soirées de Luxe",
+      "type": "kit_objets"
+    },
+    {
+      "id": "ambiance-patio",
+      "name": "Ambiance Patio",
+      "type": "kit_objets"
+    },
+    {
+      "id": "en-cuisine",
+      "name": "En Cuisine",
+      "type": "kit_objets"
+    },
+    {
+      "id": "accessoires-effrayants",
+      "name": "Accessoires Effrayants",
+      "type": "kit_objets"
+    },
+    {
+      "id": "comme-au-cinema",
+      "name": "Comme au cinéma",
+      "type": "kit_objets"
+    },
+    {
+      "id": "jardin-romantique",
+      "name": "Jardin Romantique",
+      "type": "kit_objets"
+    },
+    {
+      "id": "chambre-denfants",
+      "name": "Chambre D'enfants",
+      "type": "kit_objets"
+    },
+    {
+      "id": "en-plein-air",
+      "name": "En plein air",
+      "type": "kit_objets"
+    },
+    {
+      "id": "accessoires-vintage",
+      "name": "Accessoires Vintage",
+      "type": "kit_objets"
+    },
+    {
+      "id": "soiree-bowling",
+      "name": "Soirée Bowling",
+      "type": "kit_objets"
+    },
+    {
+      "id": "fitness",
+      "name": "Fitness",
+      "type": "kit_objets"
+    },
+    {
+      "id": "bambins",
+      "name": "Bambins",
+      "type": "kit_objets"
+    },
+    {
+      "id": "jour-de-lessive",
+      "name": "Jour de lessive",
+      "type": "kit_objets"
+    },
+    {
+      "id": "premier-animal-de-compagnie",
+      "name": "Premier animal de compagnie",
+      "type": "kit_objets"
+    },
+    {
+      "id": "moschino",
+      "name": "Moschino",
+      "type": "kit_objets"
+    },
+    {
+      "id": "mini-maisons",
+      "name": "Mini-maisons",
+      "type": "kit_objets"
+    },
+    {
+      "id": "tricot-de-pro",
+      "name": "Tricot de pro",
+      "type": "kit_objets"
+    },
+    {
+      "id": "paranormal",
+      "name": "Paranormal",
+      "type": "kit_objets"
+    },
+    {
+      "id": "passion-cuisine",
+      "name": "Passion Cuisine",
+      "type": "kit_objets"
+    },
+    {
+      "id": "creation-cristal",
+      "name": "Création cristal",
+      "type": "kit_objets"
+    }
+  ],
+  "kitPacks": [
+    {
+      "id": "cuisine-rustique",
+      "name": "Cuisine rustique",
+      "type": "kit"
+    },
+    {
+      "id": "nettoyage-de-printemps",
+      "name": "Nettoyage de printemps",
+      "type": "kit"
+    },
+    {
+      "id": "riad-de-reve",
+      "name": "Riad de rêve",
+      "type": "kit"
+    },
+    {
+      "id": "loft-industriel",
+      "name": "Loft industriel",
+      "type": "kit"
+    },
+    {
+      "id": "interieurs-fleuris",
+      "name": "Intérieurs fleuris",
+      "type": "kit"
+    },
+    {
+      "id": "deco-maximaliste",
+      "name": "Déco maximaliste",
+      "type": "kit"
+    },
+    {
+      "id": "petits-campeurs",
+      "name": "Petits campeurs",
+      "type": "kit"
+    },
+    {
+      "id": "luxe-dans-le-desert",
+      "name": "Luxe dans le désert",
+      "type": "kit"
+    },
+    {
+      "id": "chambre-pastel",
+      "name": "Chambre pastel",
+      "type": "kit"
+    },
+    {
+      "id": "objets-du-quotidien",
+      "name": "Objets du quotidien",
+      "type": "kit"
+    },
+    {
+      "id": "objets-de-salle-de-bain",
+      "name": "Objets de salle de bain",
+      "type": "kit"
+    },
+    {
+      "id": "havre-vegetal",
+      "name": "Havre végétal",
+      "type": "kit"
+    },
+    {
+      "id": "tresors-du-grenier",
+      "name": "Trésors du grenier",
+      "type": "kit"
+    },
+    {
+      "id": "coin-lecture",
+      "name": "Coin Lecture",
+      "type": "kit"
+    },
+    {
+      "id": "luxe-moderne",
+      "name": "Luxe moderne",
+      "type": "kit"
+    },
+    {
+      "id": "chateau-de-caractere",
+      "name": "Château de caractère",
+      "type": "kit"
+    },
+    {
+      "id": "kit-fete-parfaite",
+      "name": "Kit Fête Parfaite",
+      "type": "kit"
+    },
+    {
+      "id": "riviera-italienne",
+      "name": "Riviera Italienne",
+      "type": "kit"
+    },
+    {
+      "id": "bistrot-charmant",
+      "name": "Bistrot Charmant",
+      "type": "kit"
+    },
+    {
+      "id": "chambre-denfant-enchantee",
+      "name": "Chambre d'enfant Enchantée",
+      "type": "kit"
+    },
+    {
+      "id": "atelier-dartiste",
+      "name": "Atelier d'artiste",
+      "type": "kit"
+    },
+    {
+      "id": "salon-retro-de-myshunosun",
+      "name": "Salon rétro de Myshunosun",
+      "type": "kit"
+    },
+    {
+      "id": "boudoir-secret",
+      "name": "Boudoir secret",
+      "type": "kit"
+    },
+    {
+      "id": "gaming-cosy",
+      "name": "Gaming cosy",
+      "type": "kit"
+    },
+    {
+      "id": "repaire-de-casanova",
+      "name": "Repaire de Casanova",
+      "type": "kit"
+    },
+    {
+      "id": "salon-elegant",
+      "name": "Salon élégant",
+      "type": "kit"
+    },
+    {
+      "id": "salle-de-bain-sophistiquee",
+      "name": "Salle de bain sophistiquée",
+      "type": "kit"
+    },
+    {
+      "id": "atelier-de-bricolage",
+      "name": "Atelier de bricolage",
+      "type": "kit"
+    },
+    {
+      "id": "accessoires-de-cuisine",
+      "name": "Accessoires de cuisine",
+      "type": "kit"
+    }
+  ]
+}
