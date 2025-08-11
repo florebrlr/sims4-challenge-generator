@@ -1,0 +1,140 @@
+<template>
+  <div class="challenge-detail">
+    <h2>Résultats du Challenge</h2>
+
+    <div v-if="challenge">
+      <section class="section">
+        <h3>Lot :</h3>
+        <p>{{ challenge.lot }}</p>
+      </section>
+
+      <section class="section">
+        <h3>Budget :</h3>
+        <p>{{ challenge.budget }}</p>
+      </section>
+
+      <section class="section">
+        <h3>Style :</h3>
+        <p>{{ challenge.style }}</p>
+      </section>
+
+      <section class="section">
+        <h3>Packs sélectionnés ({{ challenge.packs.length }}) :</h3>
+        <ul>
+          <li v-for="packId in challenge.packs" :key="packId">
+            {{ packNameById(packId) }}
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" v-if="challenge.options && Object.keys(challenge.options).length">
+        <h3>Options :</h3>
+        <ul>
+          <li v-if="challenge.options.colors">
+            Couleurs : {{ challenge.options.colors.join(', ') }}
+          </li>
+          <li v-if="challenge.options.roomCounts !== undefined">
+            Nombre de pièces : {{ challenge.options.roomCounts }}
+          </li>
+          <li v-if="challenge.options.floors !== undefined">
+            Nombre d’étages : {{ challenge.options.floors }}
+          </li>
+          <li v-if="challenge.options.family !== undefined">
+            Taille de la famille : {{ challenge.options.family }}
+          </li>
+          <li v-if="challenge.options.timer !== undefined">
+            Timer : {{ challenge.options.timer }} minutes
+          </li>
+        </ul>
+      </section>
+
+      <section class="section" v-if="challenge.restriction">
+        <h3>Restriction :</h3>
+        <p>{{ challenge.restriction }}</p>
+      </section>
+    </div>
+
+    <div v-else>
+      <p>Aucun challenge trouvé.</p>
+    </div>
+
+    <router-link to="/">⬅ Retour à la sélection</router-link>
+  </div>
+</template>
+
+<script setup>
+import { useRoute } from 'vue-router'
+import packsJson from '@/data/packs.json'
+
+const route = useRoute()
+
+let challenge = null
+try {
+  challenge = JSON.parse(route.query.challenge || null)
+} catch {
+  challenge = null
+}
+
+// Fonction pour récupérer le nom du pack via son id
+function packNameById(id) {
+  // Cherche dans toutes les catégories de packs
+  const allPacks = [
+    ...packsJson.expansionPacks,
+    ...packsJson.gamePacks,
+    ...packsJson.stuffPacks,
+    ...packsJson.kitPacks,
+  ]
+  const found = allPacks.find(p => p.id === id)
+  return found ? found.name : id
+}
+</script>
+
+<style scoped>
+.challenge-detail {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+h2 {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.3rem;
+  color: #2c3e50;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+
+.section h3 {
+  margin-bottom: 0.3rem;
+  color: #34495e;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+router-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+router-link:hover {
+  text-decoration: underline;
+}
+</style>

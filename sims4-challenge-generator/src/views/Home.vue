@@ -1,14 +1,16 @@
 <template>
   <main>
-    <h1>Structure de la page</h1>
+    <h1>Sul Sul !Bienvenue dans le générateur de challenges Sims 4</h1>
     <div>
-      <p>menu</p>
-      <p>ChallengeDetail</p>
-      <p>Générer un random challenge</p>
+      <!-- <Menu/> -->
+      <h2>Générer mon random challenge</h2>
+      <ChallengeChoices/>
     </div>
   </main>
 </template>
 
-<script setup lang="js"></script>
+<script setup >
+import ChallengeChoices from '../components/ChallengeChoices.vue';
+</script>
 
 <style scoped lang="scss"></style>

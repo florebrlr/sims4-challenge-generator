@@ -75,6 +75,7 @@
   "restriction": [
     "Pas de bb.moveobject",
     "Pas de bb.showhiddenobjects ou bb.showliveobjects",
-    "Posé c'est posé!"
+    "Posé c'est posé !",
+    "Jeu de base uniquement !"
   ]
 }
