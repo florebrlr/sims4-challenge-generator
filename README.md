@@ -94,6 +94,5 @@ Pour toute question, contactez-moi via GitHub.
 
 
 ## 📈​ UPDATE
-12.08.25 : V0.1 
-[x] Création du projet  
-[x] 1ers tests si code fonctionne  
+12.08.25 : V0.1.0 
+[x] Création du projet
