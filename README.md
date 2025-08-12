@@ -110,6 +110,7 @@ Pour toute question, contactez-moi via GitHub.
 - 1ers tests si code fonctionne  
 
 ## TO DO  
- Refaire CSS  
+- Créer un service "randomizerService" => factoriser code
+- Refaire CSS  
 - Re-roll le challenge  
 - Pouvoir enregistrer les challenges en format text  
