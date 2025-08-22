@@ -1,168 +1,59 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+/* ******************************/
+/*       GLOBAL SETTINGS        */
+/********************************/
 
+/* import des fonts */
+@import url("https://fonts.cdnfonts.com/css/the-sims-sans");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*déclaration des variables */
+:root {
+  --GradientBG: linear-gradient(to top,
+      var(--LightBlueBG) 75%,
+      var(--BlueBG) 85%,
+      var(--GreenBG) 100%
+    );
+  --GreenBG: #A3D6A8;
+  --BlueBG: #C8E7EE;
+  --LightBlueBG: #F1F5FD;
+  --White: #FFFFFF;
+  --BlueFont: #0B2D61;
+  --BlueLink: #2886E6;
+  --OrangeLink: #F06031;
+  --GreenPlumbob: #229E2B;
+  /*-- : #;*/
+}
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing: 0;
+}
 body {
-  background-color: #ffffff;
-  color: #222222;
-  font-family: 'Inter', sans-serif;
-  line-height: 1.5;
-  min-width: 320px;
-  padding: 1rem;
-  margin: 0;
+  /* bg dégrédé */
+  background: var(--GradientBG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* font */
+  color: var(--BlueFont);
+  font-family: Raleway;
 }
 
-.container {
-  max-width: 600px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-h1, h2, h3 {
-  font-weight: 600;
-  color: #005fcc;
-  margin-bottom: 0.5rem;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
-
-p {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: #222222;
-}
-
-ul {
-  list-style: disc;
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-a {
-  color: #005fcc;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  text-decoration: underline;
-  outline: none;
-}
-
-a:focus-visible {
-  outline: 3px solid #ff9900;
-  outline-offset: 2px;
-}
-
-button,
-input[type="submit"] {
-  background-color: #005fcc;
-  color: white;
+button {
+  background-color: var(--BlueLink);
+  padding: 0.5em;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 5px;
-  font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  border-radius: 20px;
+  color: var(--White);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-family: the-sims-sans;
+  font-size: larger;
+}
+button :hover {
+  background-color: var(--GreenPlumbob);
 }
 
-button:hover,
-button:focus,
-input[type="submit"]:hover,
-input[type="submit"]:focus {
-  background-color: #004299;
-  outline: none;
+.simsFont{
+  font-family: the-sims-sans;
 }
 
-button:focus-visible,
-input[type="submit"]:focus-visible {
-  outline: 3px solid #ff9900;
-  outline-offset: 2px;
-}
-
-label {
-  display: block;
-  margin-bottom: 0.3rem;
-  font-weight: 600;
-  color: #222222;
-}
-
-input[type="text"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif;
-  margin-bottom: 1rem;
-  box-sizing: border-box;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus,
-select:focus,
-textarea:focus {
-  border-color: #005fcc;
-  outline: none;
-  box-shadow: 0 0 3px #005fcc;
-}
-
-input[type="checkbox"] {
-  margin-right: 0.5rem;
-  width: 18px;
-  height: 18px;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-fieldset {
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
-}
-
-legend {
-  font-weight: 600;
-  padding: 0 0.5rem;
-  color: #005fcc;
-}
-
-.challenge-detail pre {
-  background-color: #f0f0f0;
-  color: #333333;
-  padding: 1rem;
-  border-radius: 5px;
-  overflow-x: auto;
-  font-family: monospace;
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-@media (max-width: 600px) {
-  .container {
-    margin: 1rem;
-    padding: 0;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
-}
