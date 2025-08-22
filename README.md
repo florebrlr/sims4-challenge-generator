@@ -95,10 +95,4 @@ Pour toute question, contactez-moi via GitHub.
 
 ## UPDATE
 12.08.25 :  
-- Création du projet  
-- 1ers tests si code fonctionne  
-
-## TO DO  
- Refaire CSS  
-- Re-roll le challenge  
-- Pouvoir enregistrer les challenges en format text  
+[x] Création du projet  
