@@ -14,5 +14,9 @@ export default {
 footer {
   text-align: center;
   padding: 1rem;
+  font-family: the-sims-sans;
+  font-weight: bold;
+    color: #229E2B;
 }
+
 </style>

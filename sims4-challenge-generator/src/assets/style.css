@@ -1,2 +1,59 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+/* ******************************/
+/*       GLOBAL SETTINGS        */
+/********************************/
+
+/* import des fonts */
+@import url("https://fonts.cdnfonts.com/css/the-sims-sans");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/*déclaration des variables */
+:root {
+  --GradientBG: linear-gradient(to top,
+      var(--LightBlueBG) 75%,
+      var(--BlueBG) 85%,
+      var(--GreenBG) 100%
+    );
+  --GreenBG: #A3D6A8;
+  --BlueBG: #C8E7EE;
+  --LightBlueBG: #F1F5FD;
+  --White: #FFFFFF;
+  --BlueFont: #0B2D61;
+  --BlueLink: #2886E6;
+  --OrangeLink: #F06031;
+  --GreenPlumbob: #229E2B;
+  /*-- : #;*/
+}
+* {
+  margin : 0;
+  padding : 0;
+  box-sizing: 0;
+}
+body {
+  /* bg dégrédé */
+  background: var(--GradientBG);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* font */
+  color: var(--BlueFont);
+  font-family: Raleway;
+}
+
+button {
+  background-color: var(--BlueLink);
+  padding: 0.5em;
+  border: none;
+  border-radius: 20px;
+  color: var(--White);
+  cursor: pointer;
+  font-family: the-sims-sans;
+  font-size: larger;
+}
+button :hover {
+  background-color: var(--GreenPlumbob);
+}
+
+.simsFont{
+  font-family: the-sims-sans;
+}
 
