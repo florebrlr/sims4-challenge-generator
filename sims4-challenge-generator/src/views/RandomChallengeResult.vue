@@ -1,64 +1,69 @@
 <template>
-  <div class="random-challenge-result">
-    <h2>Résultats du Challenge</h2>
+  <div class="rc-result-container">
+    <div class="random-challenge-result">
+      <h2>Résultats du Challenge</h2>
 
-    <div v-if="challenge">
-      <section class="section">
-        <h3>Lot :</h3>
-        <p>{{ challenge.lot }}</p>
-      </section>
+      <div v-if="challenge">
+        <section class="section">
+          <h3>Lot :</h3>
+          <p>{{ challenge.lot }}</p>
+        </section>
 
-      <section class="section">
-        <h3>Budget :</h3>
-        <p>{{ challenge.budget }}</p>
-      </section>
+        <section class="section">
+          <h3>Budget :</h3>
+          <p>{{ challenge.budget }}</p>
+        </section>
 
-      <section class="section">
-        <h3>Style :</h3>
-        <p>{{ challenge.style }}</p>
-      </section>
+        <section class="section">
+          <h3>Style :</h3>
+          <p>{{ challenge.style }}</p>
+        </section>
 
-      <section class="section">
-        <h3>Packs sélectionnés ({{ challenge.packs.length }}) :</h3>
-        <ul>
-          <li v-for="packId in challenge.packs" :key="packId">
-            {{ packNameById(packId) }}
-          </li>
-        </ul>
-      </section>
+        <section class="section">
+          <h3>Packs sélectionnés ({{ challenge.packs.length }}) :</h3>
+          <ul>
+            <li v-for="packId in challenge.packs" :key="packId">
+              {{ packNameById(packId) }}
+            </li>
+          </ul>
+        </section>
 
-      <section class="section" v-if="challenge.options && Object.keys(challenge.options).length">
-        <h3>Options :</h3>
-        <ul>
-          <li v-if="challenge.options.colors">
-            Couleurs : {{ challenge.options.colors.join(', ') }}
-          </li>
-          <li v-if="challenge.options.roomCounts !== undefined">
-            Nombre de pièces : {{ challenge.options.roomCounts }}
-          </li>
-          <li v-if="challenge.options.floors !== undefined">
-            Nombre d’étages : {{ challenge.options.floors }}
-          </li>
-          <li v-if="challenge.options.family !== undefined">
-            Taille de la famille : {{ challenge.options.family }}
-          </li>
-          <li v-if="challenge.options.timer !== undefined">
-            Timer : {{ challenge.options.timer }} minutes
-          </li>
-        </ul>
-      </section>
+        <section class="section" v-if="challenge.options && Object.keys(challenge.options).length">
+          <h3>Options :</h3>
+          <ul>
+            <li v-if="challenge.options.colors">
+              Couleurs : {{ challenge.options.colors.join(', ') }}
+            </li>
+            <li v-if="challenge.options.roomCounts !== undefined">
+              Nombre de pièces : {{ challenge.options.roomCounts }}
+            </li>
+            <li v-if="challenge.options.floors !== undefined">
+              Nombre d’étages : {{ challenge.options.floors }}
+            </li>
+            <li v-if="challenge.options.family !== undefined">
+              Taille de la famille : {{ challenge.options.family }}
+            </li>
+            <li v-if="challenge.options.timer !== undefined">
+              Timer : {{ challenge.options.timer }} minutes
+            </li>
+          </ul>
+        </section>
 
-      <section class="section" v-if="challenge.restriction">
-        <h3>Restriction :</h3>
-        <p>{{ challenge.restriction }}</p>
-      </section>
+        <section class="section" v-if="challenge.restriction">
+          <h3>Restriction :</h3>
+          <p>{{ challenge.restriction }}</p>
+        </section>
+      </div>
+
+      <div v-else>
+        <p>Aucun challenge trouvé.</p>
+      </div>
     </div>
-
-    <div v-else>
-      <p>Aucun challenge trouvé.</p>
+    <div class="btns-RCResults">
+      <router-link to="/"><button>⬅ Retour à la sélection</button></router-link>
+      <button>🎲​ Re générer</button>
+      <button>📥​ Enregistrer</button>
     </div>
-
-    <router-link to="/">⬅ Retour à la sélection</router-link>
   </div>
 </template>
 
@@ -73,7 +78,6 @@ const route = useRoute()
 //Stocker dans une variable le contenu texte
 //Au clic, appeler la fonction navigator.clipboard.writeText(newClip) avec le contenu qu'on a en stock
 //Afficher à l'utilisateur une notif ou qqchose pour indiquer que c'est dans le presse-papier (par exemple, mettre à jour le message du bouton "Copier dans le pp" -> "Le texte est copié")
-
 
 let challenge = null
 try {
@@ -91,9 +95,27 @@ function packNameById(id) {
     ...packsJson.stuffPacks,
     ...packsJson.kitPacks,
   ]
-  const found = allPacks.find(p => p.id === id)
+  const found = allPacks.find((p) => p.id === id)
   return found ? found.name : id
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.rc-result-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1em 20%;
+}
+.random-challenge-result {
+  background: var(--White);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  margin-bottom: 1em;
+}
+.btns-RCResults {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+</style>

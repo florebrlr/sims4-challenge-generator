@@ -353,6 +353,10 @@ fieldset {
 input[type="radio"], input[type="checkbox"]{
   accent-color: var(--GreenPlumbob);
 }
+
+li {
+  margin: 1em;
+}
 .generate-btn {
 }
 </style>
