@@ -1,5 +1,5 @@
 <template>
-  <h2>Générer mon random challenge</h2>
+  <h2>Créer mon random challenge</h2>
   <RandomChallengeChoices />
 </template>
 
@@ -14,4 +14,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+h2 {
+  text-align: center;
+}
+</style>

@@ -1,117 +1,117 @@
 <template>
   <div class="challenge-choices">
-    <h1>Sélectionnez vos packs Sims 4 et options pour le challenge</h1>
+    <div class="packs-section">
+      <h3>Sélectionne tes packs</h3>
+      <!-- Case "Tous les packs" -->
+      <label>
+        <input type="checkbox" v-model="allPacksSelected" @change="toggleAllPacks" />
+        Tous les packs
+      </label>
 
-    <!-- Case "Tous les packs" générale -->
-    <label>
-      <input type="checkbox" v-model="allPacksSelected" @change="toggleAllPacks" />
-      Tous les packs
-    </label>
-
-    <!-- Sélection des packs -->
-    <section class="packs-selection">
-
-      <!-- Extensions -->
-      <fieldset>
-        <legend>
-          Extensions
-          <label class="select-all">
+      <!-- Sélection des packs -->
+      <section class="packs-selection">
+        <!-- Extensions -->
+        <fieldset>
+          <legend>
+            Extensions
+            <label class="select-all">
+              <input
+                type="checkbox"
+                :checked="areAllInCategorySelected('expansionPacks')"
+                @change="toggleCategory('expansionPacks', $event.target.checked)"
+              />
+              Tout cocher
+            </label>
+          </legend>
+          <label v-for="pack in packsJson.expansionPacks" :key="pack.id">
             <input
               type="checkbox"
-              :checked="areAllInCategorySelected('expansionPacks')"
-              @change="toggleCategory('expansionPacks', $event.target.checked)"
+              v-model="selectedPacks"
+              :value="pack.id"
+              :disabled="allPacksSelected"
             />
-            Tout cocher
+            {{ pack.name }}
           </label>
-        </legend>
-        <label v-for="pack in packsJson.expansionPacks" :key="pack.id">
-          <input
-            type="checkbox"
-            v-model="selectedPacks"
-            :value="pack.id"
-            :disabled="allPacksSelected"
-          />
-          {{ pack.name }}
-        </label>
-      </fieldset>
+        </fieldset>
 
-      <!-- Packs de jeu -->
-      <fieldset>
-        <legend>
-          Packs de jeu
-          <label class="select-all">
+        <!-- Packs de jeu -->
+        <fieldset>
+          <legend>
+            Packs de jeu
+            <label class="select-all">
+              <input
+                type="checkbox"
+                :checked="areAllInCategorySelected('gamePacks')"
+                @change="toggleCategory('gamePacks', $event.target.checked)"
+              />
+              Tout cocher
+            </label>
+          </legend>
+          <label v-for="pack in packsJson.gamePacks" :key="pack.id">
             <input
               type="checkbox"
-              :checked="areAllInCategorySelected('gamePacks')"
-              @change="toggleCategory('gamePacks', $event.target.checked)"
+              v-model="selectedPacks"
+              :value="pack.id"
+              :disabled="allPacksSelected"
             />
-            Tout cocher
+            {{ pack.name }}
           </label>
-        </legend>
-        <label v-for="pack in packsJson.gamePacks" :key="pack.id">
-          <input
-            type="checkbox"
-            v-model="selectedPacks"
-            :value="pack.id"
-            :disabled="allPacksSelected"
-          />
-          {{ pack.name }}
-        </label>
-      </fieldset>
+        </fieldset>
 
-      <!-- Kits d’objets -->
-      <fieldset>
-        <legend>
-          Kits d’objets
-          <label class="select-all">
+        <!-- Kits d’objets -->
+        <fieldset>
+          <legend>
+            Kits d’objets
+            <label class="select-all">
+              <input
+                type="checkbox"
+                :checked="areAllInCategorySelected('stuffPacks')"
+                @change="toggleCategory('stuffPacks', $event.target.checked)"
+              />
+              Tout cocher
+            </label>
+          </legend>
+          <label v-for="pack in packsJson.stuffPacks" :key="pack.id">
             <input
               type="checkbox"
-              :checked="areAllInCategorySelected('stuffPacks')"
-              @change="toggleCategory('stuffPacks', $event.target.checked)"
+              v-model="selectedPacks"
+              :value="pack.id"
+              :disabled="allPacksSelected"
             />
-            Tout cocher
+            {{ pack.name }}
           </label>
-        </legend>
-        <label v-for="pack in packsJson.stuffPacks" :key="pack.id">
-          <input
-            type="checkbox"
-            v-model="selectedPacks"
-            :value="pack.id"
-            :disabled="allPacksSelected"
-          />
-          {{ pack.name }}
-        </label>
-      </fieldset>
+        </fieldset>
 
-      <!-- Kits -->
-      <fieldset>
-        <legend>
-          Kits
-          <label class="select-all">
+        <!-- Kits -->
+        <fieldset>
+          <legend>
+            Kits
+            <label class="select-all">
+              <input
+                type="checkbox"
+                :checked="areAllInCategorySelected('kitPacks')"
+                @change="toggleCategory('kitPacks', $event.target.checked)"
+              />
+              Tout cocher
+            </label>
+          </legend>
+          <label v-for="pack in packsJson.kitPacks" :key="pack.id">
             <input
               type="checkbox"
-              :checked="areAllInCategorySelected('kitPacks')"
-              @change="toggleCategory('kitPacks', $event.target.checked)"
+              v-model="selectedPacks"
+              :value="pack.id"
+              :disabled="allPacksSelected"
             />
-            Tout cocher
+            {{ pack.name }}
           </label>
-        </legend>
-        <label v-for="pack in packsJson.kitPacks" :key="pack.id">
-          <input
-            type="checkbox"
-            v-model="selectedPacks"
-            :value="pack.id"
-            :disabled="allPacksSelected"
-          />
-          {{ pack.name }}
-        </label>
-      </fieldset>
-    </section>
+        </fieldset>
+      </section>
+    </div>
 
     <!-- Choix du nombre de packs à tirer -->
     <section class="pack-count-selection">
-      <h2>Nombre de packs aléatoires à sélectionner</h2>
-      <label v-for="count in [1,2,3]" :key="count">
+      <h3>Nombre de packs aléatoires à sélectionner</h3>
+      <label v-for="count in [1, 2, 3]" :key="count">
         <input type="radio" v-model="randomPackCount" :value="count" />
         {{ count }}
       </label>
@@ -119,7 +119,7 @@
 
     <!-- Options aléatoires -->
     <section class="random-options">
-      <h2>Options (cocher pour inclure dans le challenge aléatoire)</h2>
+      <h3>Options (cocher pour inclure dans le challenge aléatoire)</h3>
 
       <div v-for="option in optionCategories" :key="option.key" class="option-checkbox">
         <label class="option-label">
@@ -131,7 +131,7 @@
 
     <!-- Restriction -->
     <section class="restriction-section">
-      <h2>Restriction supplémentaire</h2>
+      <h3>Restriction supplémentaire</h3>
       <label>
         <input type="checkbox" v-model="restrictionSelected" />
         Oui, je veux une restriction aléatoire
@@ -185,10 +185,10 @@ const optionCategories = [
 function toggleAllPacks() {
   if (allPacksSelected.value) {
     selectedPacks.value = [
-      ...packsJson.expansionPacks.map(p => p.id),
-      ...packsJson.gamePacks.map(p => p.id),
-      ...packsJson.stuffPacks.map(p => p.id),
-      ...packsJson.kitPacks.map(p => p.id),
+      ...packsJson.expansionPacks.map((p) => p.id),
+      ...packsJson.gamePacks.map((p) => p.id),
+      ...packsJson.stuffPacks.map((p) => p.id),
+      ...packsJson.kitPacks.map((p) => p.id),
     ]
   } else {
     selectedPacks.value = []
@@ -197,19 +197,19 @@ function toggleAllPacks() {
 
 // Vérifie si tous les packs d’une catégorie sont cochés
 function areAllInCategorySelected(category) {
-  const packs = packsJson[category].map(p => p.id)
-  return packs.every(id => selectedPacks.value.includes(id))
+  const packs = packsJson[category].map((p) => p.id)
+  return packs.every((id) => selectedPacks.value.includes(id))
 }
 
 // Cocher/décocher tous les packs d’une catégorie
 function toggleCategory(category, checked) {
-  const packs = packsJson[category].map(p => p.id)
+  const packs = packsJson[category].map((p) => p.id)
   if (checked) {
     // Ajouter les packs de la catégorie (sans dupliquer)
     selectedPacks.value = Array.from(new Set([...selectedPacks.value, ...packs]))
   } else {
     // Retirer les packs de la catégorie
-    selectedPacks.value = selectedPacks.value.filter(id => !packs.includes(id))
+    selectedPacks.value = selectedPacks.value.filter((id) => !packs.includes(id))
   }
 }
 
@@ -228,10 +228,10 @@ function generateChallenge() {
   let packsForChallenge = []
   if (allPacksSelected.value || selectedPacks.value.length === 0) {
     packsForChallenge = [
-      ...packsJson.expansionPacks.map(p => p.id),
-      ...packsJson.gamePacks.map(p => p.id),
-      ...packsJson.stuffPacks.map(p => p.id),
-      ...packsJson.kitPacks.map(p => p.id),
+      ...packsJson.expansionPacks.map((p) => p.id),
+      ...packsJson.gamePacks.map((p) => p.id),
+      ...packsJson.stuffPacks.map((p) => p.id),
+      ...packsJson.kitPacks.map((p) => p.id),
     ]
   } else {
     packsForChallenge = [...selectedPacks.value]
@@ -302,5 +302,28 @@ function generateChallenge() {
 </script>
 
 <style scoped>
+.challenge-choices {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 1em;
+}
 
+h3 {
+  margin: 0.5em;
+}
+.packs-section {
+  display: flex;
+  background-color: pink;
+}
+fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: red;
+}
+
+.generate-btn {
+  
+}
 </style>

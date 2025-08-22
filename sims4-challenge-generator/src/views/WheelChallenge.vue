@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Wheel Challenge Page</h2>
+    <h2>Créer mon Wheel Challenge </h2>
     <WheelChallengeChoices />
   </div>
 </template>

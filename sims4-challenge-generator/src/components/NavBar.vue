@@ -42,4 +42,8 @@ export default {
   font-weight: 600;
   color: var(--BlueFont);
 }
+
+.navbar a :hover {
+  color: #2886E6;
+}
 </style>
