@@ -302,41 +302,5 @@ function generateChallenge() {
 </script>
 
 <style scoped>
-.challenge-choices {
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 1rem 2rem;
-}
 
-.packs-selection fieldset {
-  border: 1px solid #ddd;
-  margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
-}
-
-.packs-selection legend {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-
-.generate-btn {
-  margin-top: 2rem;
-  padding: 0.7rem 1.5rem;
-  font-size: 1.1rem;
-  background-color: #3498db;
-  border: none;
-  border-radius: 6px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.generate-btn:hover {
-  background-color: #2980b9;
-}
 </style>
