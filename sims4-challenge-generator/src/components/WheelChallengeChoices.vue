@@ -39,4 +39,8 @@ export default {
 //Afficher un bouton + a côté de l'input, et au clic, ajouter le nouvel élément dans le tableau
 </script>
 
-<style scoped></style>
+<style scoped>
+input[type="checkbox"]{
+  accent-color: var(--GreenPlumbob);
+}
+</style>

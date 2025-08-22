@@ -5,7 +5,8 @@
       <!--DIV random challenge-->
       <div class="card">
         <h2>Random Challenge</h2>
-        <p>desciption du Random Challenge ici</p>
+        <p>Choisis des packs et des options, l'application génère un challenge aléatoire pour ta construction. <br>
+        Chaque partie est unique et surprenante. </p>
         <img src="" alt="" />
 <router-link to="/randomchallenge">
   <button>Créer mon Random Challenge</button>
@@ -14,7 +15,8 @@
       <!--DIV wheel challenge-->
       <div class="card">
         <h2>Wheel Challenge</h2>
-        <p>desciption du Random Challenge ici</p>
+        <p>Crée une liste d’éléments (couleurs, objets, style de construction…),
+          <br>fais tourner la roue et découvre sur quel élément elle s’arrête pour décider ton défi.</p>
         <img src="" alt="" />
 <router-link to="/wheelchallenge">
   <button>Créer mon Wheel Challenge</button>
