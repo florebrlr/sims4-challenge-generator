@@ -3,10 +3,12 @@
     <div class="packs-section">
       <h3>Sélectionne tes packs</h3>
       <!-- Case "Tous les packs" -->
+       <div class="richesse">
       <label>
         <input type="checkbox" v-model="allPacksSelected" @change="toggleAllPacks" />
         Tous les packs
       </label>
+       </div>
 
       <!-- Sélection des packs -->
       <section class="packs-selection">
@@ -293,7 +295,7 @@ function generateChallenge() {
 
   // Passer à la page détail avec query param
   router.push({
-    name: 'ChallengeDetail',
+    name: 'randomChallengeResult',
     query: {
       challenge: JSON.stringify(challenge),
     },
@@ -307,23 +309,54 @@ function generateChallenge() {
   justify-content: center;
   flex-direction: column;
   margin: 1em;
+  padding: 0 25%;
 }
 
 h3 {
   margin: 0.5em;
 }
-.packs-section {
-  display: flex;
-  background-color: pink;
+
+legend {
+  font-weight: bold;
 }
+.richesse {
+  margin: 0.5em;
+  font-weight: bold;
+}
+
+.packs-selection {
+  display: grid;
+  margin: 0 5%;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 1fr 1fr;
+  gap: 1em;
+}
+
 fieldset {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  background-color: red;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
 }
 
+.packs-section, .pack-count-selection, .random-options, .restriction-section {
+  background: var(--White);
+  padding: 0.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 1em;
+}
+
+input[type="radio"], input[type="checkbox"]{
+  accent-color: var(--GreenPlumbob);
+}
+
+li {
+  margin: 1em;
+}
 .generate-btn {
-  
 }
 </style>
