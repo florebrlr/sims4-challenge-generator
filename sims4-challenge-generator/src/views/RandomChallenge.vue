@@ -1,12 +1,17 @@
 <template>
-  <NavBar />
   <h2>Générer mon random challenge</h2>
-  <ChallengeChoices />
+  <RandomChallengeChoices />
 </template>
 
-<script setup>
-import NavBar from '@/components/NavBar.vue';
-import ChallengeChoices from '@/components/ChallengeChoices.vue';
+<script>
+import RandomChallengeChoices from '@/components/RandomChallengeChoices.vue'
+
+export default {
+  name: 'RandomChallenge',
+  components: {
+    RandomChallengeChoices,
+  },
+}
 </script>
 
 <style scoped></style>

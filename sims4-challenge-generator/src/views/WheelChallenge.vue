@@ -1,10 +1,20 @@
 <template>
-  <NavBar />
-  <h2>Wheel Challenge Page</h2>
+  <div>
+    <h2>Wheel Challenge Page</h2>
+    <WheelChallengeChoices />
+  </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar.vue';
+import WheelChallengeChoices from '@/components/WheelChallengeChoices.vue'
+
+export default {
+  name: 'WheelChallenge',
+  components: {
+    WheelChallengeChoices
+  }
+}
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

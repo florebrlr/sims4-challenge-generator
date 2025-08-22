@@ -1,18 +1,23 @@
 <template>
   <nav class="navbar">
     <ul>
-      <li><router-link class="link" to="{name: 'home'}">Acceuil</router-link></li>
-      <li><router-link class="link" to="{name: 'RandomChallenge'}">Random Challenge</router-link></li>
-      <li><router-link class="link" to="{name: 'WheelChallenge'}">Wheel Challenge</router-link></li>
-      <Home />
-
+      <li>
+        <router-link class="link" :to="{ name: 'home' }">Accueil</router-link>
+      </li>
+      <li>
+        <router-link class="link" :to="{ name: 'randomChallenge' }">Random Challenge</router-link>
+      </li>
+      <li>
+        <router-link class="link" :to="{ name: 'wheelChallenge' }">Wheel Challenge</router-link>
+      </li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'NavBar',
+}
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
