@@ -68,6 +68,13 @@ import packsJson from '@/data/packs.json'
 
 const route = useRoute()
 
+//Pour sauvegarder le résultat en format texte :
+//Ajouter un bouton "copier dans le presse papier"
+//Stocker dans une variable le contenu texte
+//Au clic, appeler la fonction navigator.clipboard.writeText(newClip) avec le contenu qu'on a en stock
+//Afficher à l'utilisateur une notif ou qqchose pour indiquer que c'est dans le presse-papier (par exemple, mettre à jour le message du bouton "Copier dans le pp" -> "Le texte est copié")
+
+
 let challenge = null
 try {
   challenge = JSON.parse(route.query.challenge || null)
@@ -89,7 +96,4 @@ function packNameById(id) {
 }
 </script>
 
-<style scoped>
-
-</style>
-
+<style scoped></style>

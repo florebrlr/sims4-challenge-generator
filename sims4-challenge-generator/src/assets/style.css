@@ -11,8 +11,7 @@
   --GradientBG: linear-gradient(to top,
       var(--LightBlueBG) 75%,
       var(--BlueBG) 85%,
-      var(--GreenBG) 100%
-    );
+      var(--GreenBG) 100%);
   --GreenBG: #A3D6A8;
   --BlueBG: #C8E7EE;
   --LightBlueBG: #F1F5FD;
@@ -23,11 +22,13 @@
   --GreenPlumbob: #229E2B;
   /*-- : #;*/
 }
+
 * {
-  margin : 0;
-  padding : 0;
+  margin: 0;
+  padding: 0;
   box-sizing: 0;
 }
+
 body {
   /* bg dégrédé */
   background: var(--GradientBG);
@@ -49,11 +50,11 @@ button {
   font-family: the-sims-sans;
   font-size: larger;
 }
-button :hover {
+
+button:hover {
   background-color: var(--GreenPlumbob);
 }
 
-.simsFont{
+.simsFont {
   font-family: the-sims-sans;
 }
-

@@ -31,7 +31,9 @@
 - **WheelChallenge.vue** : générer wheel challenge  
 
 ### COMPONENTS
-- **RandomChallengeChoices.vue** : définit les packs, options et restriction pour générer le challenge via le btn  
+- **RandomChallengeChoices.vue** : définit les packs, options et restriction pour générer le challenge via le btn
+- **NavBar** : menu  
+- **Footer** : pied de page   
 
 
 ### DATA
