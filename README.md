@@ -33,16 +33,27 @@ Le projet **sims4-challenge-generator** est une application web permettant aux j
 
 ```
 sims4-challenge-generator/
-├── src/
-│   ├── assets/         # Ressources statiques (images, polices, etc.)
-│   ├── components/     # Composants Vue.js
-│   ├── views/          # Vues principales de l'application
-│   ├── App.vue         # Composant racine de l'application
-│   └── main.js         # Point d'entrée de l'application
 ├── public/
-│   └── index.html      # Fichier HTML principal
-├── package.json        # Dépendances et scripts du projet
-└── README.md           # Documentation du projet
+│   └── index.html                 # Fichier HTML principal
+├── src/
+│   ├── assets/
+│   │   └── style.css              # Styles globaux
+│   ├── components/                # Composants Vue.js réutilisables
+│   │   ├── ChallengeCard.vue
+│   │   └── ChallengeChoices.vue
+│   ├── data/                      # Données JSON
+│   │   ├── categories.json        # Template des catégories
+│   │   └── packs.json             # Liste des packs
+│   ├── router/
+│   │   └── router.js              # Configuration du routage
+│   ├── views/                     # Pages principales
+│   │   ├── ChallengeDetail.vue
+│   │   └── Home.vue
+│   ├── App.vue                    # Composant racine
+│   └── main.js                    # Point d'entrée de l'application
+├── package.json                   # Dépendances et scripts
+├── vite.config.js                 # Configuration Vite
+└── README.md                      # Documentation
 ```
 
 ## 🛠️ Installation et démarrage
