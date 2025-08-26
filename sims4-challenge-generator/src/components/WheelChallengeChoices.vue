@@ -27,16 +27,14 @@
   <div class="container">
     <div class="spinBtn">Spin</div>
     <div class="wheel">
-      <div class="inputContainer" style="--i:1;--clr:var(--color1)"><span >élément 1</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color2)"><span >élément 2</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color3)"><span >élément 3</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color4)"><span >élément 4</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color5)"><span >élément 5</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color6)"><span >élément 6</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color7)"><span >élément 7</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color8)"><span >élément 8</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color9)"><span >élément 9</span></div>
-      <div class="inputContainer" style="--i:1;--clr:var(--color10)"><span >élément 10</span></div>
+      <div class="inputContainer" style="--i: 1; --clr: var(--color1)"><span>élément 1</span></div>
+      <div class="inputContainer" style="--i: 2; --clr: var(--color2)"><span>élément 2</span></div>
+      <div class="inputContainer" style="--i: 3; --clr: var(--color3)"><span>élément 3</span></div>
+      <div class="inputContainer" style="--i: 4; --clr: var(--color4)"><span>élément 4</span></div>
+      <div class="inputContainer" style="--i: 5; --clr: var(--color5)"><span>élément 5</span></div>
+      <div class="inputContainer" style="--i: 6; --clr: var(--color6)"><span>élément 6</span></div>
+      <div class="inputContainer" style="--i: 7; --clr: var(--color7)"><span>élément 7</span></div>
+      <div class="inputContainer" style="--i: 8; --clr: var(--color8)"><span>élément 8</span></div>
     </div>
   </div>
 </template>
@@ -51,13 +49,13 @@
 //Afficher un li par élément
 //Afficher un input relié a une variable (dans une ref)
 //Afficher un bouton + a côté de l'input, et au clic, ajouter le nouvel élément dans le tableau
-let wheel = document.querySelector('.wheel');
-let spinBtn = document.querySelector('.spinBtn');
-let value = Math.ceil(Math.random()*3600);
+let wheel = document.querySelector('.wheel')
+let spinBtn = document.querySelector('.spinBtn')
+let value = Math.ceil(Math.random() * 3600)
 
-spinBtn.onclick = function(){
-  wheel.style.transform = "rotate(" + value + "deg)";
-  value += Math.ceil(Math.random()*3600);
+spinBtn.onclick = function () {
+  wheel.style.transform = 'rotate(' + value + 'deg)'
+  value += Math.ceil(Math.random() * 3600)
 }
 </script>
 
@@ -71,8 +69,7 @@ spinBtn.onclick = function(){
   --color6: #ff7f50;
   --color7: #3cb371;
   --color8: #4169e1;
-  --color9: rgb(158, 63, 247);
-  --color10: rgb(21, 241, 131);
+
 }
 body {
   display: flex;
@@ -120,16 +117,17 @@ body {
 
 .container .wheel {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-color: #333;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 0 5px #333,
-  0 0 0 15px var(--White),
-  0 0 0 18 px #111;
+  box-shadow:
+    0 0 0 5px #333,
+    0 0 0 15px var(--White),
+    0 0 0 18 px #111;
   transition: transform 5s ease-in-out;
 }
 
@@ -139,7 +137,7 @@ body {
   height: 50%;
   background-color: var(--clr);
   transform-origin: bottom right;
-  transform: rotate(calc(45deg * var(--i))) ;
+  transform: rotate(calc(45deg * var(--i)));
   clip-path: polygon(0 0%, 56%, 100% 100%, 0 56%);
   display: flex;
   justify-content: center;
@@ -152,7 +150,7 @@ body {
   position: relative;
   transform: rotate(45deg);
   font-size: 1em;
-  color:var(--White);
+  color: var(--White);
 }
 /* WC choices */
 input[type='checkbox'] {
