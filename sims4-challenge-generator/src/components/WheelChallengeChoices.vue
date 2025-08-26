@@ -23,6 +23,7 @@
     <button>Lancer la roue</button>
   </div>-->
 
+  
   <!--test spin wheel here-->
   <div class="container">
     <div class="spinBtn">Spin</div>
@@ -39,7 +40,7 @@
   </div>
 </template>
 
-<script set up>
+<script setup>
 //Créer un tableau d'éléments prédéfinis (dans une ref)
 //Boucler avec v-for sur tt les éléments
 //Afficher une checkbox par élément
@@ -49,14 +50,19 @@
 //Afficher un li par élément
 //Afficher un input relié a une variable (dans une ref)
 //Afficher un bouton + a côté de l'input, et au clic, ajouter le nouvel élément dans le tableau
-let wheel = document.querySelector('.wheel')
-let spinBtn = document.querySelector('.spinBtn')
+
+import { ref, onMounted } from 'vue'
+
+const wheel = ref(null)
+const spinBtn = ref(null)
 let value = Math.ceil(Math.random() * 3600)
 
-spinBtn.onclick = function () {
-  wheel.style.transform = 'rotate(' + value + 'deg)'
-  value += Math.ceil(Math.random() * 3600)
-}
+onMounted(() => {
+  spinBtn.value.addEventListener('click', () => {
+    wheel.value.style.transform = 'rotate(' + value + 'deg)'
+    value += Math.ceil(Math.random() * 3600)
+  })
+})
 </script>
 
 <style scoped>
