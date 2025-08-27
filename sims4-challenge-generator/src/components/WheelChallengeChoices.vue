@@ -47,7 +47,7 @@ import { onMounted, ref, computed } from 'vue'
 // 📌 ÉTAPE 1: DÉCLARER TOUTES LES REFS D'ABORD
 const colors = ref([])
 const styles = ref([])
-const packs = ref([])
+const mondes = ref([])
 
 // Éléments personnalisés
 const customItems = ref([])
@@ -119,19 +119,23 @@ onMounted(() => {
   // Assure-toi que la structure de tes JSON correspond
   colors.value = categoriesData.colors || []
   styles.value = categoriesData.styles || []
-  packs.value = packsData || []
+  mondes.value = categoriesData.mondes || []
 
   // Debug pour vérifier la structure des données
   console.log('Colors:', colors.value)
   console.log('Styles:', styles.value)
-  console.log('Packs:', packs.value)
+  console.log('Mondes:', mondes.value)
 })
 </script>
 
 <style scoped>
 .wc-container {
+  display: flex;
   padding: 1em;
   margin: 0 1em;
+  width: 35%;
+  align-items: flex-start;
+  gap: 1em;
 }
 
 .predefined-container,
@@ -164,6 +168,11 @@ onMounted(() => {
   background: #ff4444;
   padding: 2px 6px;
   font-size: 12px;
+}
+
+
+.launch-btn {
+  align-self: center;
 }
 
 .launch-btn:disabled {

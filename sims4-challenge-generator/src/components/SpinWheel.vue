@@ -28,19 +28,19 @@
 //Afficher un bouton + a côté de l'input, et au clic, ajouter le nouvel élément dans le tableau
 
 //imports
-import { ref, onMounted } from 'vue'
+// import { ref, onMounted } from 'vue'
 
-//script pour l'animation de la roue (= fait le random)
-const wheel = ref(null)
-const spinBtn = ref(null)
-let value = Math.ceil(Math.random() * 3600)
+// //script pour l'animation de la roue (= fait le random)
+// const wheel = ref(null)
+// const spinBtn = ref(null)
+// let value = Math.ceil(Math.random() * 3600)
 
-onMounted(() => {
-  spinBtn.value.addEventListener('click', () => {
-    wheel.value.style.transform = 'rotate(' + value + 'deg)'
-    value += Math.ceil(Math.random() * 3600)
-  })
-})
+// onMounted(() => {
+//   spinBtn.value.addEventListener('click', () => {
+//     wheel.value.style.transform = 'rotate(' + value + 'deg)'
+//     value += Math.ceil(Math.random() * 3600)
+//   })
+// })
 </script>
 
 <style scoped>

@@ -63,7 +63,7 @@
     "min": 2,
     "max": 15
   },
-  "Floors": {
+  "floors": {
     "min": 1,
     "max": 4
   },
@@ -76,6 +76,37 @@
     "Pas de bb.moveobject",
     "Pas de bb.showhiddenobjects ou bb.showliveobjects",
     "Posé c'est posé !",
-    "Jeu de base uniquement !"
+    "Jeu de base uniquement !",
+    "Au moins un mur arrondi",
+    "Plateformes obligatoires"
+  ],
+  "mondes":[
+    "Willow Creek",
+"Oasis Spring",
+"Magnolia Promenade",
+"Newcrest",
+"Windenburg",
+"San Myshuno",
+"Forgotten Hollow",
+"Brindleton Bay",
+"Del Sol Valley",
+"StrangerVille",
+"Sulani",
+"Glimmerbrook",
+"Britechester",
+"Evergreen Harbor",
+"Mont Komorebi",
+"Henford-on-Bagley",
+"Tartosa",
+"Moonwood Mill",
+"Copperdale",
+"San Sequoia",
+"Chestnut Ridge",
+"Tomarang",
+"Ciudad Enamorada",
+"Ravenwood",
+"Nordhaven",
+"Innisgreen"
   ]
+
 }
