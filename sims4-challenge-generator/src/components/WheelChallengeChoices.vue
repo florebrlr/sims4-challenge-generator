@@ -1,164 +1,196 @@
 <template>
-  <!--
   <div class="wc-container">
-    <div>
+    <div class="predefined-container">
+      <!-- éléments prédéfinis = si on sélectionne une checkbox, alors les éléments se remplissent automatiquement dans éléments personnalisés-->
       <h3>éléments prédéfinis</h3>
-      <input type="checkbox" v-model="isChecked" /> <br />
-      <input type="checkbox" v-model="isChecked" /> <br />
-      <input type="checkbox" v-model="isChecked" /> <br />
-      <input type="checkbox" v-model="isChecked" /> <br />
+      <div v-for="category in predifinedCategories" :key="category.id" class="checkbox-item">
+        <input
+          type="checkbox"
+          :id="`category-${category.id}`"
+          :checked="selectedCategory === category.id"
+          @change="handleCategorySelection(category.id)"
+        />
+        <label :for="`category-${category.id}`">{{ category.name }}</label>
+      </div>
     </div>
-    <div>
+
+    <div class="custom-container">
       <h3>éléments personnalisés</h3>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li v-for="item in customItems" :key="item.id">
+          {{ item.name }}
+          <button @click="removeItem(item.id)" class="remove-btn">×</button>
+        </li>
       </ul>
+      <div class="input-container">
+        <input
+          type="text"
+          v-model="newItemInput"
+          placeholder="Ajouter un élément..."
+          @keyup.enter="addCustomItem"
+        />
+        <button @click="addCustomItem" class="add-btn"><SquarePlus /></button>
+      </div>
     </div>
-    <button>Lancer la roue</button>
-  </div>-->
-
-  
-  <!--test spin wheel here-->
-  <div class="container">
-    <div class="spinBtn">Spin</div>
-    <div class="wheel">
-      <div class="inputContainer" style="--i: 1; --clr: var(--color1)"><span>élément 1</span></div>
-      <div class="inputContainer" style="--i: 2; --clr: var(--color2)"><span>élément 2</span></div>
-      <div class="inputContainer" style="--i: 3; --clr: var(--color3)"><span>élément 3</span></div>
-      <div class="inputContainer" style="--i: 4; --clr: var(--color4)"><span>élément 4</span></div>
-      <div class="inputContainer" style="--i: 5; --clr: var(--color5)"><span>élément 5</span></div>
-      <div class="inputContainer" style="--i: 6; --clr: var(--color6)"><span>élément 6</span></div>
-      <div class="inputContainer" style="--i: 7; --clr: var(--color7)"><span>élément 7</span></div>
-      <div class="inputContainer" style="--i: 8; --clr: var(--color8)"><span>élément 8</span></div>
-    </div>
+    <button @click="launchWheel" class="launch-btn" >
+      Lancer la roue
+    </button>
   </div>
 </template>
 
 <script setup>
-//Créer un tableau d'éléments prédéfinis (dans une ref)
-//Boucler avec v-for sur tt les éléments
-//Afficher une checkbox par élément
+// Imports
+import { SquarePlus } from 'lucide-vue-next';
+import categoriesData from '@/data/categories.json'
+import { onMounted, ref, computed } from 'vue'
 
-//Créer un tableau dynamique d'élément personnalisés (dans une ref)
-//Boucler avec v-for sur tt les éléments
-//Afficher un li par élément
-//Afficher un input relié a une variable (dans une ref)
-//Afficher un bouton + a côté de l'input, et au clic, ajouter le nouvel élément dans le tableau
+// 📌 ÉTAPE 1: DÉCLARER TOUTES LES REFS D'ABORD
+const colors = ref([])
+const styles = ref([])
+const mondes = ref([])
 
-import { ref, onMounted } from 'vue'
+// Éléments personnalisés
+const customItems = ref([])
+const newItemInput = ref('')
 
-const wheel = ref(null)
-const spinBtn = ref(null)
-let value = Math.ceil(Math.random() * 3600)
+// Gestion des checkboxes
+const selectedCategory = ref(null)
 
+// Résultat de la roue
+const wheelResult = ref('')
+const isSpinning = ref(false)
+
+// 📌 ÉTAPE 2: COMPUTED POUR LES CATÉGORIES PRÉDÉFINIES
+// Utilise computed() pour que les catégories se mettent à jour quand les données sont chargées
+const predifinedCategories = computed(() => [
+  { id: 1, name: 'Couleurs', items: colors.value },
+  { id: 2, name: 'Styles', items: styles.value },
+  { id: 3, name: 'Mondes', items: mondes.value },
+])
+
+// 📌 ÉTAPE 3: FONCTIONS
+const handleCategorySelection = (categoryId) => {
+  if (selectedCategory.value === categoryId) {
+    // Si déjà sélectionnée, on désélectionne
+    selectedCategory.value = null
+    customItems.value = []
+  } else {
+    // Sinon on sélectionne cette catégorie
+    selectedCategory.value = categoryId
+    // Remplir automatiquement les éléments personnalisés avec cette catégorie
+    const category = predifinedCategories.value.find((cat) => cat.id === categoryId)
+    if (category && category.items) {
+      // Transformer les items en objets avec id si ce ne sont que des strings
+      customItems.value = category.items.map((item, index) => ({
+        id: Date.now() + index,
+        name: typeof item === 'string' ? item : item.name,
+      }))
+    }
+  }
+}
+
+const addCustomItem = () => {
+  if (newItemInput.value.trim()) {
+    customItems.value.push({
+      id: Date.now(),
+      name: newItemInput.value.trim(),
+    })
+    newItemInput.value = ''
+  }
+}
+
+const removeItem = (itemId) => {
+  customItems.value = customItems.value.filter((item) => item.id !== itemId)
+}
+
+// 📌 ÉTAPE 4: ÉMISSIONS VERS LE PARENT
+const emit = defineEmits(['launch-wheel'])
+
+const launchWheel = () => {
+  if (customItems.value.length > 0) {
+    emit('launch-wheel', customItems.value)
+  } else {
+    alert('Ajoute au moins un élément à la roue !')
+  }
+}
+
+// 📌 ÉTAPE 5: CHARGEMENT DES DONNÉES
 onMounted(() => {
-  spinBtn.value.addEventListener('click', () => {
-    wheel.value.style.transform = 'rotate(' + value + 'deg)'
-    value += Math.ceil(Math.random() * 3600)
-  })
+  // Assure-toi que la structure de tes JSON correspond
+  colors.value = categoriesData.colors || []
+  styles.value = categoriesData.styles || []
+  mondes.value = categoriesData.mondes || []
+
+  // Debug pour vérifier la structure des données
+  console.log('Colors:', colors.value)
+  console.log('Styles:', styles.value)
+  console.log('Mondes:', mondes.value)
 })
 </script>
 
 <style scoped>
-:root {
-  --color1: #db7093;
-  --color2: #20b2aa;
-  --color3: #d63e92;
-  --color4: #daa520;
-  --color5: #ff340f;
-  --color6: #ff7f50;
-  --color7: #3cb371;
-  --color8: #4169e1;
-
-}
-body {
+.wc-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  padding: 1em;
+  margin: 0 1em;
+  width: 35%;
+  align-items: flex-start;
+  gap: 1em;
 }
 
-/* Spin Wheel */
-.container {
-  position: relative;
-  width: 400px;
-  height: 400px;
+.predefined-container,
+.custom-container {
+  background: var(--White);
+  padding: 0.5em;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+}
+
+.checkbox-item {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.container .spinBtn {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  background-color: var(--White);
-  border-radius: 50%;
-  z-index: 10;
+.input-container input {
+  padding: 0.5em;
+  border-radius: 8px;
+  border: 1px solid;
+  margin-right: 2em;
+  width: 85%;
+}
+
+.add-btn {
+  font-size: 15px;
+  border-radius: none;
+}
+.remove-btn {
+  background: #ff4444;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+
+.launch-btn {
+  align-self: center;
+}
+
+.launch-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;
-  font-weight: 600;
-  border: 3px solid rgba(0, 0, 0, 0.75);
-  cursor: pointer;
-  user-select: none;
 }
 
-.container .spinBtn::before {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 30px;
-  top: -28px;
-  clip-path: polygon(50% 0%, 15% 100%, 85% 100%);
-  background-color: var(--White);
-}
-
-.container .wheel {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #333;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow:
-    0 0 0 5px #333,
-    0 0 0 15px var(--White),
-    0 0 0 18 px #111;
-  transition: transform 5s ease-in-out;
-}
-
-.container .wheel .inputContainer {
-  position: absolute;
-  width: 50%;
-  height: 50%;
-  background-color: var(--clr);
-  transform-origin: bottom right;
-  transform: rotate(calc(45deg * var(--i)));
-  clip-path: polygon(0 0%, 56%, 100% 100%, 0 56%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-}
-
-.container .wheel .inputContainer span {
-  position: relative;
-  transform: rotate(45deg);
-  font-size: 1em;
-  color: var(--White);
-}
-/* WC choices */
 input[type='checkbox'] {
   accent-color: var(--GreenPlumbob);
 }
