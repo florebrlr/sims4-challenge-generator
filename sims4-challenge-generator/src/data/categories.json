@@ -24,7 +24,9 @@
     "boîte de nuit",
     "location",
     "salle de sport",
-    "petite entreprise"
+    "petite entreprise",
+    "onsen",
+    "piscine"
   ],
   "colors": [
     "rouge",
@@ -67,7 +69,7 @@
     "min": 1,
     "max": 4
   },
-    "Family": {
+  "Family": {
     "min": 1,
     "max": 8
   },
@@ -80,33 +82,32 @@
     "Au moins un mur arrondi",
     "Plateformes obligatoires"
   ],
-  "mondes":[
+  "mondes": [
     "Willow Creek",
-"Oasis Spring",
-"Magnolia Promenade",
-"Newcrest",
-"Windenburg",
-"San Myshuno",
-"Forgotten Hollow",
-"Brindleton Bay",
-"Del Sol Valley",
-"StrangerVille",
-"Sulani",
-"Glimmerbrook",
-"Britechester",
-"Evergreen Harbor",
-"Mont Komorebi",
-"Henford-on-Bagley",
-"Tartosa",
-"Moonwood Mill",
-"Copperdale",
-"San Sequoia",
-"Chestnut Ridge",
-"Tomarang",
-"Ciudad Enamorada",
-"Ravenwood",
-"Nordhaven",
-"Innisgreen"
+    "Oasis Spring",
+    "Magnolia Promenade",
+    "Newcrest",
+    "Windenburg",
+    "San Myshuno",
+    "Forgotten Hollow",
+    "Brindleton Bay",
+    "Del Sol Valley",
+    "StrangerVille",
+    "Sulani",
+    "Glimmerbrook",
+    "Britechester",
+    "Evergreen Harbor",
+    "Mont Komorebi",
+    "Henford-on-Bagley",
+    "Tartosa",
+    "Moonwood Mill",
+    "Copperdale",
+    "San Sequoia",
+    "Chestnut Ridge",
+    "Tomarang",
+    "Ciudad Enamorada",
+    "Ravenwood",
+    "Nordhaven",
+    "Innisgreen"
   ]
-
 }
